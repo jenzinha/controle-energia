@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes - {{ home.name }}</title>
+</head>
+<body>
+    <h1>Detalhes - {{ home.name }}</h1>
+    <h2>Resumo</h2>
+    <p>Total Consumido: {{ data.consumption_total }} kWh</p>
+    <p>Total Produzido: {{ data.production_total }} kWh</p>
+    <p>Armazenamento Atual: {{ data.storage }} kWh</p>
+    <p>Armazenamento Anterior: {{ data.previous_storage }} kWh</p>
+    <h2>Estatísticas</h2>
+    <p>Média de Produção Diária: {{ data.avg_daily_production }} kWh</p>
+    <p>Média de Consumo Diário: {{ data.avg_daily_consumption }} kWh</p>
+    <p>Mediana da Produção Diária: {{ data.median_production }} kWh</p>
+    <p>Mediana do Consumo Diário: {{ data.median_consumption }} kWh</p>
+    <h2>Gráficos</h2>
+    <iframe src="{{ production_graph_url }}" width="600" height="400"></iframe>
+    <iframe src="{{ consumption_graph_url }}" width="600" height="400"></iframe>
+    <iframe src="{{ stacked_graph_url }}" width="600" height="400"></iframe>
+    <iframe src="{{ scatter_graph_url }}" width="600" height="400"></iframe>
+    <iframe src="{{ pie_graph_url }}" width="600" height="400"></iframe>
+    <a href="{{ url_for('dashboard', home_id=home.id) }}">Voltar</a>
+</body>
+</html>

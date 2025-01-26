@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Residências</title>
+</head>
+<body>
+    <h1>Escolha uma Residência:</h1>
+    <ul>
+        {% for home in homes %}
+        <li><a href="{{ url_for('dashboard', home_id=home.id) }}">{{ home.name }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

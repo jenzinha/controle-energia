@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel - {{ home.name }}</title>
+</head>
+<body>
+    <h1>Painel de Energia - {{ home.name }}</h1>
+    <h2>Consumo, Produção e Armazenamento</h2>
+    <p>Total Consumido: {{ data.consumption_total }} kWh</p>
+    <p>Total Produzido: {{ data.production_total }} kWh</p>
+    <p>Armazenamento Atual: {{ data.storage }} kWh</p>
+    <iframe src="{{ graph_url }}" width="600" height="400"></iframe>
+    <iframe src="{{ pie_graph_url }}" width="600" height="400"></iframe>
+    <a href="{{ url_for('details', home_id=home.id) }}">Ver Mais Detalhes</a>
+</body>
+</html>
