@@ -106,8 +106,6 @@ def generate_graphs(data, home_id):
     
     return production_graph_path, consumption_graph_path, stacked_graph_path, scatter_graph_path, pie_graph_path
 
-
-
 @app.route("/")
 def index():
     return render_template("index.html", homes=HOMES)
